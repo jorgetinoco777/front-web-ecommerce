@@ -2,23 +2,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { StoreRegisterComponent } from './pages/store-register/store-register.component';
-import { RoundsmanRegisterComponent } from './pages/roundsman-register/roundsman-register.component';
-import { HomeComponent } from './pages/home/home.component';
+
+import { PagesModule } from "./pages/pages.module";
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StoreRegisterComponent,
-    RoundsmanRegisterComponent,
-    HomeComponent
+    FooterComponent,
+    HeaderComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+
+    AppRoutingModule,
+
+    PagesModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
