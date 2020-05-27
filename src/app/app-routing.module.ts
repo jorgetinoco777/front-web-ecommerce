@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { RoundsmanRegisterComponent } from './pages/roundsman-register/roundsman-register.component';
 import { StoreRegisterComponent } from './pages/store-register/store-register.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'roundsman-register',
     component: RoundsmanRegisterComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: '**',
