@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { RoundsmanRegisterComponent } from './roundsman-register/roundsman-register.component';
 import { StoreRegisterComponent } from './store-register/store-register.component';
 import { AboutComponent } from './about/about.component';
+import { LegalComponent } from './legal/legal.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     RoundsmanRegisterComponent,
     StoreRegisterComponent,
-    AboutComponent
+    AboutComponent,
+    LegalComponent
   ],
   entryComponents: []
 })

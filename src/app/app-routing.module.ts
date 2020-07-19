@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RoundsmanRegisterComponent } from './pages/roundsman-register/roundsman-register.component';
 import { StoreRegisterComponent } from './pages/store-register/store-register.component';
 import { AboutComponent } from './pages/about/about.component';
+import { LegalComponent } from './pages/legal/legal.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'legal',
+    component: LegalComponent
   },
   {
     path: '**',
