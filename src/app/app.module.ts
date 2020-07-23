@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoadingComponent } from './loading/loading.component';
 
+import { APP_BASE_HREF } from '@angular/common'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { LoadingComponent } from './loading/loading.component';
 
     PagesModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: window['_app_base'] || '/' }, 
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
