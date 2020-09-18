@@ -5,14 +5,9 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyDs4l-ci5DluSEcJqhTxKWLXiAnuf2X1Eg",
-    authDomain: "alpaso-e0fc9.firebaseapp.com",
     databaseURL: "https://alpaso-e0fc9.firebaseio.com",
-    projectId: "alpaso-e0fc9",
-    storageBucket: "alpaso-e0fc9.appspot.com",
-    messagingSenderId: "292927541673",
-    appId: "1:292927541673:web:dc9839da724c9527a0f4b8"
-  }
+  },
+  protocol: 'https'
 };
 
 /*
