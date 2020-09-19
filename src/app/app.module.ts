@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoadingComponent } from './loading/loading.component';
 
 import { APP_BASE_HREF } from '@angular/common'; 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,9 @@ import { APP_BASE_HREF } from '@angular/common';
     BrowserModule,
 
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     PagesModule
   ],
