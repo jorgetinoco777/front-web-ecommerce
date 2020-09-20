@@ -415,8 +415,8 @@ img {
 }
 
 .btn-success {
-    background: #28a745 !important;
-    border-color: #28a745 !important;
+    background: #20BCAE !important;
+    border-color: #20BCAE !important;
 }
 
 .button-group {
@@ -587,19 +587,19 @@ img {
 }
 
 .homepage-3 .welcome-area {
-    background: rgba(0, 0, 0, 0) url("../img/blog/blog-5.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-bg.jpg") no-repeat scroll center center / cover;
 }
 
 .homepage-4 .welcome-area {
-    background: rgba(0, 0, 0, 0) url("../img/blog/blog-7.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-bg.jpg") no-repeat scroll center center / cover;
 }
 
 .homepage-5 .welcome-area {
-    background: rgba(0, 0, 0, 0) url("../img/blog/blog-4.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-bg.jpg") no-repeat scroll center center / cover;
 }
 
 .homepage-6 .welcome-area {
-    background: rgba(0, 0, 0, 0) url("../img/blog/blog-9.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-bg.jpg") no-repeat scroll center center / cover;
 }
 
 .accounts .welcome-area {
@@ -615,7 +615,7 @@ img {
 }
 
 .download-area {
-    background: rgba(0, 0, 0, 0) url("../img/bg/download-bg.jpg") no-repeat fixed center center / cover;
+    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-bg.jpg") no-repeat fixed center center / cover;
 }
 
 .subscribe-area {
@@ -635,7 +635,7 @@ img {
 }
 
 .download-page .welcome-area {
-    background: rgba(0, 0, 0, 0) url("../img/bg/download.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-bg.jpg") no-repeat scroll center center / cover;
 }
 
 .inner .welcome-area {
