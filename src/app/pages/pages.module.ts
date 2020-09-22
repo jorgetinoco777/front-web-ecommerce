@@ -7,10 +7,15 @@ import { RoundsmanRegisterComponent } from './roundsman-register/roundsman-regis
 import { StoreRegisterComponent } from './store-register/store-register.component';
 import { AboutComponent } from './about/about.component';
 import { LegalComponent } from './legal/legal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,
