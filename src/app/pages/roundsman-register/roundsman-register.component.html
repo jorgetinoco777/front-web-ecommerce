@@ -1,22 +1,3 @@
-<!-- ***** Breadcrumb Area Start ***** -->
-<section class="section breadcrumb-area bg-overlay d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Breamcrumb Content -->
-                <div class="breadcrumb-content d-flex flex-column align-items-center text-center">
-                    <h2 class="text-white text-capitalize">Contact Us</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="text-uppercase text-white" href="index.html">Home</a></li>
-                        <li class="breadcrumb-item text-white active">Contact</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ***** Breadcrumb Area End ***** -->
-
 <!--====== Contact Area Start ======-->
 <section id="contact" class="contact-area bg-gray ptb_100">
     <div class="container">
@@ -70,43 +51,49 @@
             <div class="col-12 col-md-6 pt-4 pt-md-0">
                 <!-- Contact Box -->
                 <div class="contact-box text-center">
+
                     <!-- Contact Form -->
-                    <form id="contact-form" name="roundsmanForm" novalidate>
+                    <form id="formRoundsman" name="formRoundsman" [formGroup]="formRoundsman" novalidate>
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  formControlName="id" placeholder="Cédula" required="required">
+                                    <input matInput class="form-control" formControlName="name" placeholder="Name">
+                                    <div class="alert-message" *ngIf="formRoundsman.get('name').hasError('minlength')">
+                                        Nombre no puede tener menos de 4 caracteres.
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  formControlName="name" placeholder="Name" required="required">
+                                    <input matInput class="form-control" formControlName="phone" placeholder="Teléfono">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="phone" placeholder="Teléfono" required="required">
+                                    <input matInput class="form-control" formControlName="email" placeholder="Email">
+                                    <div class="alert-message" *ngIf="formRoundsman.get('email').hasError('email')">
+                                        Correo electrónico correcto.
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" formControlName="email" placeholder="Email" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="type" placeholder="Tipo de Vehículo" required="required">
+                                    <input matInput class="form-control" formControlName="type" placeholder="Tipo de Vehículo">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" formControlName="message" placeholder="Message" required="required"></textarea>
+                                    <textarea matInput class="form-control" formControlName="message" placeholder="Message"></textarea>
                                 </div>
                             </div>
                             <div class="col-12 text-left">
-                                <input type="checkbox" formControlName="terms_accept" required="required"> Acepto los terminos y condiciones
+                                <input type="checkbox" formControlName="terms_accept"> Acepto los terminos y condiciones de Al Paso.
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-lg btn-block mt-3" (click)="send()" [disabled]="roundsmanForm.invalid">
+                                <button type="button" class="btn btn-lg btn-block mt-3" (click)="send()" [disabled]="formRoundsman.invalid">
                                     <span class="text-white pr-3"><i class="fas fa-paper-plane"></i></span>
-                                    Send Message
+                                    Enviar Solicitud
                                 </button>
                             </div>
                         </div>
+
                     </form>
-                    <p class="form-message"></p>
+
                 </div>
             </div>
         </div>
