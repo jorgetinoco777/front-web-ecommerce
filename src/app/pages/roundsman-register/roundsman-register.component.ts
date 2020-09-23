@@ -26,16 +26,13 @@ export class RoundsmanRegisterComponent implements OnInit {
     this.status = 'PENDIENTE';
 
     this.formRoundsman = this._formBuilder.group({
-      name: [ 'Jorge', [ Validators.required, Validators.minLength(3)] ],
-      phone: [ '0967647864', [ Validators.required, Validators.minLength(10), Validators.maxLength(10)] ],
-      email: [ 'jorge@hotmail.com', [ Validators.required, Validators.email ] ],
-      type: [ 'Moto', Validators.required ],
+      name: [ '', [ Validators.required, Validators.minLength(3)] ],
+      phone: [ '', [ Validators.required, Validators.minLength(10), Validators.maxLength(10)] ],
+      email: [ '', [ Validators.required, Validators.email ] ],
+      type: [ '', Validators.required ],
       message: [ 'Hola, me gustaría formar parte del equipo Al Paso', [ Validators.required, Validators.minLength(3) ] ],
       terms_accept: [ false ]
     });
-
-      console.log("Forms: ", this.formRoundsman);
-      
 
   }
 
