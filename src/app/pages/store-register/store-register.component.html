@@ -11,8 +11,6 @@
                         Paso
                     </span>
                     <h2>Registro de Negocio</h2>
-                    <p class="d-none d-sm-block mt-4">Registrate y te contactaremos inmediatamente.</p>
-                    <p class="d-block d-sm-none mt-4">Registrate y te contactaremos inmediatamente.</p>
                 </div>
             </div>
         </div>
@@ -20,14 +18,14 @@
             <div class="col-12 col-md-5">
                 <!-- Contact Us -->
                 <div class="contact-us">
-                    <p class="mb-3">Al Paso es un proyecto social que busca poner al servicio de pequeños y medianas empresas tecnología como herramienta para incursionar en el mundo de la tecnología.</p>
+                    <p class="mb-3">Al Paso es una plataforma que busca poner al servicio de pequeños y medianas empresas tecnología para incrementar sus ventas y dar un mejor servicio a sus clientes.</p>
                     <ul>
                         <li class="py-2">
                             <a class="media" href="#">
                                 <div class="social-icon mr-3">
                                     <i class="fas fa-home"></i>
                                 </div>
-                                <span class="media-body align-self-center">Pichincha / Ecuador, matriz Quito, DC 2002</span>
+                                <span class="media-body align-self-center">Oficina matriz Quito / Pichincha</span>
                             </a>
                         </li>
                         <li class="py-2">
@@ -52,51 +50,48 @@
             <div class="col-12 col-md-6 pt-4 pt-md-0">
                 <!-- Contact Box -->
                 <div class="contact-box text-center">
+
                     <!-- Contact Form -->
-                    <form id="contact-form" method="POST" action="assets/php/mail.php">
+                    <form id="formStore" name="formStore" [formGroup]="formStore" novalidate>
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Nombre y Apellido" required="required">
+                                    <input matInput class="form-control" formControlName="name" placeholder="Nombre y Apellido">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="phone" placeholder="Telefono" required="required">
+                                    <input matInput class="form-control" formControlName="phone" placeholder="Telefono">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                                    <input matInput class="form-control" formControlName="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Dirección" required="required">
+                                    <input matInput class="form-control" formControlName="address" placeholder="Dirección">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_name" placeholder="Nombre Comercial" required="required">
+                                    <input matInput class="form-control" formControlName="business_name" placeholder="Nombre Comercial">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="message" placeholder="¿A qué te dedicas?" required="required"></textarea>
+                                    <textarea class="form-control" formControlName="message" placeholder="¿A qué te dedicas?"></textarea>
                                 </div>
                             </div>
                             <div class="col-12 text-left">
-                                <input type="checkbox" name="" required="required"> Acepto los terminos y condiciones
+                                <input type="checkbox" formControlName="terms_accept"> Acepto los terminos y condiciones
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-lg btn-block mt-3"><span class="text-white pr-3"><i class="fas fa-paper-plane"></i></span>Send Message</button>
+                                <button type="button" class="btn btn-lg btn-block mt-3" (click)="send()" [disabled]="formStore.invalid">
+                                    <span class="text-white pr-3">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </span>Enviar Solicitud
+                                </button>
                             </div>
                         </div>
                     </form>
-                    <p class="form-message"></p>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--====== Contact Area End ======-->
-
-<!--====== Map Area Start ======-->
-<!--
-<section class="section map-area">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.596666220624!2d-0.16124461362595294!3d51.46556134684942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605a25375dfb7%3A0xe0d9fa09dcf932a8!2s15%20Theatre%20St%2C%20Battersea%2C%20London%20SW11%205ND%2C%20UK!5e0!3m2!1sen!2sbd!4v1567427969685!5m2!1sen!2sbd" width="100" height="100" style="border:0;" allowfullscreen=""></iframe>
-</section>
--->
-<!--====== Map Area End ======-->

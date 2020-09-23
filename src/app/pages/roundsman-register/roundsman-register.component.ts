@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoundsmanService } from '../../services/roundsman.service';
 import Swal from 'sweetalert2';
-
 
 @Component({
   selector: 'app-roundsman-register',
@@ -39,10 +38,14 @@ export class RoundsmanRegisterComponent implements OnInit {
   send() {
 
     if ( !this.formRoundsman.get('terms_accept').value ) {
-      Swal.fire('¿Deseas continuar?', 'Por favor, acepta los términos y condiciones.', 'error'
-      )
+      Swal.fire('¿Deseas continuar?', 'Por favor, acepta los términos y condiciones.', 'error')
       return;
     }
+
+    this.date = new Date().toLocaleString('en-ES', {
+      timeZone: 'America/Guayaquil',
+      hour12: false
+    });
 
     this.roundsman = {
       name: this.formRoundsman.get('name').value,
@@ -54,13 +57,6 @@ export class RoundsmanRegisterComponent implements OnInit {
       status: this.status,
       date: this.date
     };
-
-    console.log("Roundsman: ", this.roundsman);
-
-    this.date = new Date().toLocaleString('en-ES', {
-      timeZone: 'America/Guayaquil',
-      hour12: false
-    });
 
     this._roundsmanService.save( this.roundsman ).subscribe( ( confirm ) => {
       Swal.fire({
