@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
 
@@ -13,7 +14,8 @@ export class LandingStoreComponent implements OnInit {
   appStore: string;
   playStore: string;
 
-  constructor( private deviceService: DeviceDetectorService ) {
+  constructor( private deviceService: DeviceDetectorService,
+               private router: Router ) {
     this.appStore = 'https://apps.apple.com/us/app/id1522625554';
     this.playStore = 'https://play.google.com/store/apps/details?id=app.gocomunicacion.alpaso';
   }
@@ -23,7 +25,7 @@ export class LandingStoreComponent implements OnInit {
 
   }
 
-  epicFunction() {
+  epicFunction(): void {
 
     this.deviceInfo = this.deviceService.getDeviceInfo();
 
@@ -31,10 +33,12 @@ export class LandingStoreComponent implements OnInit {
     const isTablet = this.deviceService.isTablet();
     const isDesktopDevice = this.deviceService.isDesktop();
 
+    /*
     console.log(this.deviceInfo);
     console.log(isMobile);  // returns if the device is a mobile device (android / iPhone / windows-phone etc)
     console.log(isTablet);  // returns if the device us a tablet (iPad etc)
     console.log(isDesktopDevice); // returns if the app is running on a Desktop browser.
+    */
 
     // Validar si es mobile or tablet
     if ( isMobile || isTablet ) {
@@ -42,7 +46,11 @@ export class LandingStoreComponent implements OnInit {
         window.location.href = this.appStore;
       } else if ( this.deviceInfo.os === 'Android' ) {
         window.location.href = this.playStore;
+      } else {
+        this.router.navigate(['/home']);
       }
+    } else {
+      this.router.navigate(['/home']);
     }
 
   }

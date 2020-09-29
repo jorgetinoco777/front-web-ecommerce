@@ -13,6 +13,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { APP_BASE_HREF } from '@angular/common'; 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
 
-    PagesModule
+    PagesModule,
+    
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: window['_app_base'] || '/' }, 
