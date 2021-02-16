@@ -24,6 +24,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/flaticon.css",
+              "src/assets/css/other/icofont.min.css",
+              "src/assets/css/other/magnific-popup.css",
+              "src/assets/css/other/slick-theme.css",
+              "src/assets/css/slick.css",
+              "src/assets/css/style.scss",
+              "src/assets/css/responsive.scss",
               "src/styles.css"
             ],
             "scripts": [
