@@ -11,6 +11,7 @@ import { StoreRegisterComponent } from './store-register/store-register.componen
 import { AboutComponent } from './about/about.component';
 import { LegalComponent } from './legal/legal.component';
 import { LandingStoreComponent } from './landing-store/landing-store.component';
+import { AppTiendasRoutingComponent } from './app-tiendas-routing/app-tiendas-routing.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { LandingStoreComponent } from './landing-store/landing-store.component';
     StoreRegisterComponent,
     AboutComponent,
     LegalComponent,
-    LandingStoreComponent
+    LandingStoreComponent,
+    AppTiendasRoutingComponent
   ],
   entryComponents: []
 })

@@ -8,6 +8,7 @@ import { StoreRegisterComponent } from './pages/store-register/store-register.co
 import { AboutComponent } from './pages/about/about.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { LandingStoreComponent } from './pages/landing-store/landing-store.component';
+import { AppTiendasRoutingComponent } from './pages/app-tiendas-routing/app-tiendas-routing.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'landing',
     component: LandingStoreComponent
+  },
+  {
+    path: 'app-tiendas',
+    component: AppTiendasRoutingComponent
   },
   {
     path: '**',
