@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { LegalComponent } from './legal/legal.component';
 import { LandingStoreComponent } from './landing-store/landing-store.component';
 import { AppTiendasRoutingComponent } from './app-tiendas-routing/app-tiendas-routing.component';
+import { AppRepartidorRoutingComponent } from './app-repartidor-routing/app-repartidor-routing.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { AppTiendasRoutingComponent } from './app-tiendas-routing/app-tiendas-ro
     AboutComponent,
     LegalComponent,
     LandingStoreComponent,
-    AppTiendasRoutingComponent
+    AppTiendasRoutingComponent,
+    AppRepartidorRoutingComponent
   ],
   entryComponents: []
 })

@@ -9,6 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { LandingStoreComponent } from './pages/landing-store/landing-store.component';
 import { AppTiendasRoutingComponent } from './pages/app-tiendas-routing/app-tiendas-routing.component';
+import { AppRepartidorRoutingComponent } from './pages/app-repartidor-routing/app-repartidor-routing.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'app-tiendas',
     component: AppTiendasRoutingComponent
+  },
+  {
+    path: 'app-repartidor',
+    component: AppRepartidorRoutingComponent
   },
   {
     path: '**',
