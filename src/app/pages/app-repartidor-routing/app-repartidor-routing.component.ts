@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
+// Firebase Analytics
+import { AngularFireAnalytics } from '@angular/fire/analytics';
+import { UtilsService } from '../../services/utils.service';
+
 @Component({
   selector: 'app-app-repartidor-routing',
   templateUrl: './app-repartidor-routing.component.html',
@@ -13,45 +17,28 @@ export class AppRepartidorRoutingComponent implements OnInit {
   appStore: string;
   playStore: string;
 
-  constructor( private deviceService: DeviceDetectorService,
-               private router: Router ) 
+  constructor( private analytics: AngularFireAnalytics,
+               // private deviceService: DeviceDetectorService,
+               private router: Router,
+               private _routingAppService: UtilsService ) 
   {
+
+    // Obtener info device
+    //this.deviceInfo = this.deviceService.getDeviceInfo();
+
+    // Guardar registro Google Anatytics
+    this.analytics.logEvent('page_view', {
+      page_location: this.router.url,
+      page_path: this.router.url,
+      page_title: 'Routing App Repartidor'
+    });
+
     this.appStore = 'https://apps.apple.com/us/app/repartidor-al-paso/id1547179186';
     this.playStore = 'https://play.google.com/store/apps/details?id=app.alpaso.repartidor';
   }
 
   ngOnInit(): void {
-    this.routing();
-  }
-
-  routing(): void {
-
-    this.deviceInfo = this.deviceService.getDeviceInfo();
-
-    const isMobile = this.deviceService.isMobile();
-    const isTablet = this.deviceService.isTablet();
-    const isDesktopDevice = this.deviceService.isDesktop();
-
-    /*
-    console.log("Info: ", this.deviceInfo);
-    console.log("Is Mobile: ", isMobile);  // returns if the device is a mobile device (android / iPhone / windows-phone etc)
-    console.log("Is Tablet: ", isTablet);  // returns if the device us a tablet (iPad etc)
-    console.log("Is Desktop Device: ", isDesktopDevice); // returns if the app is running on a Desktop browser.
-    */
-    
-    // Validar si es mobile or tablet
-    if ( isMobile || isTablet ) {
-      if ( this.deviceInfo.os === 'iOS' ) {
-        window.location.href = this.appStore;
-      } else if ( this.deviceInfo.os === 'Android' ) {
-        window.location.href = this.playStore;
-      } else {
-        this.router.navigate(['/roundsman-register']);
-      }
-    } else {
-      this.router.navigate(['/roundsman-register']);
-    }
-
+    this._routingAppService.routing( this.appStore, this.playStore, '/roundsman-register' );
   }
 
 }
