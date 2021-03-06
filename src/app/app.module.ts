@@ -15,6 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+
+// Environments
+import { environment } from "../environments/environment.prod";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +31,9 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+
+    AngularFireModule.initializeApp( environment.firebaseConfig ),
+    AngularFireAnalyticsModule,
 
     AppRoutingModule,
     HttpClientModule,

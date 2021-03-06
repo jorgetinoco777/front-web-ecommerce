@@ -12,7 +12,7 @@ export const environment = {
     storageBucket: "alpaso-e0fc9.appspot.com",
     messagingSenderId: "292927541673",
     appId: "1:292927541673:web:77d28455286f04a4a0f4b8",
-    measurementId: "G-6H6CDDDZ7H"
+    measurementId: "G-93BZ79BFS3"
   },
   protocol: 'https'
 };
