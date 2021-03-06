@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { AngularFireAnalytics } from '@angular/fire/analytics';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-app-tiendas-routing',
@@ -13,45 +15,26 @@ export class AppTiendasRoutingComponent implements OnInit {
   appStore: string;
   playStore: string;
 
-  constructor( private deviceService: DeviceDetectorService,
-               private router: Router )
+  constructor( private analytics: AngularFireAnalytics,
+               // private deviceService: DeviceDetectorService,
+               private router: Router,
+               private _routingAppService: UtilsService )
   {
-                this.appStore = 'https://apps.apple.com/us/app/al-paso-tiendas/id1548570480';
-                this.playStore = 'https://play.google.com/store/apps/details?id=app.alpaso.tienda';
+
+    // Guardar registro Google Anatytics
+    this.analytics.logEvent('page_view', {
+      page_location: this.router.url,
+      page_path: this.router.url,
+      page_title: 'Routing App Tiendas'
+    });
+
+    this.appStore = 'https://apps.apple.com/us/app/al-paso-tiendas/id1548570480';
+    this.playStore = 'https://play.google.com/store/apps/details?id=app.alpaso.tienda';
+
   }
 
   ngOnInit(): void {
-    this.routing();
-  }
-
-  routing(): void {
-
-    this.deviceInfo = this.deviceService.getDeviceInfo();
-
-    const isMobile = this.deviceService.isMobile();
-    const isTablet = this.deviceService.isTablet();
-    const isDesktopDevice = this.deviceService.isDesktop();
-
-    /*
-    console.log("Info: ", this.deviceInfo);
-    console.log("Is Mobile: ", isMobile);  // returns if the device is a mobile device (android / iPhone / windows-phone etc)
-    console.log("Is Tablet: ", isTablet);  // returns if the device us a tablet (iPad etc)
-    console.log("Is Desktop Device: ", isDesktopDevice); // returns if the app is running on a Desktop browser.
-    */
-    
-    // Validar si es mobile or tablet
-    if ( isMobile || isTablet ) {
-      if ( this.deviceInfo.os === 'iOS' ) {
-        window.location.href = this.appStore;
-      } else if ( this.deviceInfo.os === 'Android' ) {
-        window.location.href = this.playStore;
-      } else {
-        this.router.navigate(['/store-register']);
-      }
-    } else {
-      this.router.navigate(['/store-register']);
-    }
-
+    this._routingAppService.routing(this.appStore, this.playStore, '/store-register');
   }
 
 }

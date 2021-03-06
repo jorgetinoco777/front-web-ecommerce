@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DeviceDetectorService } from 'ngx-device-detector';
+//import { DeviceDetectorService } from 'ngx-device-detector';
 
 // Firebase Analytics
 import { AngularFireAnalytics } from '@angular/fire/analytics';
