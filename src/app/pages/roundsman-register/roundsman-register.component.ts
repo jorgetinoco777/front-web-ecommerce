@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoundsmanService } from '../../services/roundsman.service';
 import Swal from 'sweetalert2';
+import { AngularFireAnalytics } from '@angular/fire/analytics';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-roundsman-register',
@@ -17,8 +19,20 @@ export class RoundsmanRegisterComponent implements OnInit {
   date: string;
   city: string;
 
-  constructor( private _formBuilder: FormBuilder,
-               private _roundsmanService: RoundsmanService ) { }
+  constructor( private analytics: AngularFireAnalytics,
+               private _formBuilder: FormBuilder,
+               private _roundsmanService: RoundsmanService,
+               private router: Router ) 
+  {
+
+    // Guardar registro Google Anatytics
+    this.analytics.logEvent('page_view', {
+      page_location: this.router.url,
+      page_path: this.router.url,
+      page_title: 'Formulario Registro Repartidor'
+    });
+
+  }
 
   ngOnInit(): void {
 

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoundsmanService } from '../../services/roundsman.service';
 import Swal from 'sweetalert2';
 import { StoreService } from '../../services/store.service';
+import { AngularFireAnalytics } from '@angular/fire/analytics';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-store-register',
@@ -18,8 +20,20 @@ export class StoreRegisterComponent implements OnInit {
   date: string;
   city: string;
 
-  constructor( private _formBuilder: FormBuilder,
-               private _storeService: StoreService ) { }
+  constructor( private analytics: AngularFireAnalytics,
+               private _formBuilder: FormBuilder,
+               private _storeService: StoreService,
+               private router: Router ) 
+  {
+
+    // Guardar registro Google Anatytics
+    this.analytics.logEvent('page_view', {
+      page_location: this.router.url,
+      page_path: this.router.url,
+      page_title: 'Formulario Registro Local'
+    });
+
+  }
 
   ngOnInit(): void {
 
