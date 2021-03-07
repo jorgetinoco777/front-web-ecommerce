@@ -13,6 +13,7 @@ import { LegalComponent } from './legal/legal.component';
 import { LandingStoreComponent } from './landing-store/landing-store.component';
 import { AppTiendasRoutingComponent } from './app-tiendas-routing/app-tiendas-routing.component';
 import { AppRepartidorRoutingComponent } from './app-repartidor-routing/app-repartidor-routing.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { AppRepartidorRoutingComponent } from './app-repartidor-routing/app-repa
     LegalComponent,
     LandingStoreComponent,
     AppTiendasRoutingComponent,
-    AppRepartidorRoutingComponent
+    AppRepartidorRoutingComponent,
+    VerifyEmailComponent
   ],
   entryComponents: []
 })
