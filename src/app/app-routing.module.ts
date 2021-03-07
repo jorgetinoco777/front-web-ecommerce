@@ -10,6 +10,7 @@ import { LegalComponent } from './pages/legal/legal.component';
 import { LandingStoreComponent } from './pages/landing-store/landing-store.component';
 import { AppTiendasRoutingComponent } from './pages/app-tiendas-routing/app-tiendas-routing.component';
 import { AppRepartidorRoutingComponent } from './pages/app-repartidor-routing/app-repartidor-routing.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'app-repartidor',
     component: AppRepartidorRoutingComponent
+  },
+  {
+    path: 'verify-email/:email',
+    component: VerifyEmailComponent
   },
   {
     path: '**',
